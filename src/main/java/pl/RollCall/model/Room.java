@@ -1,6 +1,5 @@
 package pl.RollCall.model;
 
-import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,11 +20,9 @@ public class Room {
 
     private String name;
 
-    @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User owner;
+    private Account owner;
 
     @ManyToMany(fetch = FetchType.LAZY)
-    private List<User> userList;
+    private List<Account> accounts;
 }

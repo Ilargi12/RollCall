@@ -10,10 +10,10 @@ import java.util.List;
 
 @Getter
 @Setter
-@Entity
+@Entity(name = "myAccount")
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -27,6 +27,6 @@ public class User {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "owner")
     private List<Room> roomsOwner;
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "userList")
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "accounts")
     private List<Room> rooms;
 }

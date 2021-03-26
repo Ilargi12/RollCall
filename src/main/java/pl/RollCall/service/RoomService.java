@@ -32,7 +32,7 @@ public class RoomService {
         roomToUpdate.setId(room.getId());
         roomToUpdate.setName(room.getName());
         roomToUpdate.setOwner(room.getOwner());
-        roomToUpdate.setUserList(room.getUserList());
+        roomToUpdate.setAccounts(room.getAccounts());
         return roomRepository.save(roomToUpdate);
     }
 

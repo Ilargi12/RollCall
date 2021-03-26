@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ControllerAdvice
 public class NotFoundAdvice {
     @ResponseBody
-    @ExceptionHandler({RoomNotFoundException.class, UserNotFoundException.class})
+    @ExceptionHandler({RoomNotFoundException.class, AccountNotFoundException.class})
     @ResponseStatus(HttpStatus.NOT_FOUND)
     String NotFoundHandler(RuntimeException ex){
         return ex.getMessage();
